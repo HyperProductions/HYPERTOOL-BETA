@@ -5,6 +5,7 @@ import webbrowser
 from modules import systeminfo, ipscanner, portscanner, network, processviewer, cleaner
 from modules import debug
 
+# COLORS
 MOR = "\033[95m"
 RESET = "\033[0m"
 RED = "\033[91m"
@@ -33,6 +34,7 @@ def wait():
 
 
 def iplogger():
+    print(MOR + "Opening IP Logger..." + RESET)
     webbrowser.open("https://iplogger.org")
     wait()
 
@@ -45,37 +47,37 @@ def menu():
         if not debug.is_debug():
             banner()
 
-            print("[1] System Info")
-            print("[2] IP Scanner")
-            print("[3] Port Scanner")
-            print("[4] Network Tools")
-            print("[5] Process Viewer")
-            print("[6] Cleaner")
-            print("[7] IP Logger")
-            print("[0] Exit")
+            print(MOR + "[1]" + RESET + " System Information")
+            print(MOR + "[2]" + RESET + " IP Scanner")
+            print(MOR + "[3]" + RESET + " Port Scanner")
+            print(MOR + "[4]" + RESET + " Network Tools")
+            print(MOR + "[5]" + RESET + " Process Viewer")
+            print(MOR + "[6]" + RESET + " Cleaner")
+            print(MOR + "[7]" + RESET + " IP Logger")
+            print(RED + "[0]" + RESET + " Exit")
 
-            choice = input("\n>> ").strip().lower()
+            choice = input("\n>> Select: ").strip().lower()
 
-        # RETRO DEBUG MODE
+        # DEBUG MODE (RETRO PURPLE SCREEN)
         else:
             debug.retro_banner()
             debug.retro_menu()
 
-            choice = input("\nDEBUG>> ").strip().lower()
+            choice = input(MOR + "\nDEBUG>> " + RESET).strip().lower()
 
             if choice == "5":
                 debug.toggle()
                 continue
 
-            print("\n[DEBUG OUTPUT]")
-            print("Command:", choice)
+            print(MOR + "\n[DEBUG OUTPUT]" + RESET)
+            print(MOR + "Command:", choice + RESET)
             wait()
             continue
 
-        # SECRET KEY
+        # SECRET DEBUG KEY
         if choice == debug.DEBUG_KEY:
-            debug.toggle()
-            print(GREEN + "\nDEBUG MODE TOGGLED" + RESET)
+            state = debug.toggle()
+            print(GREEN + f"\nDEBUG MODE: {state}" + RESET)
             wait()
             continue
 
@@ -107,8 +109,7 @@ def menu():
 
         else:
             print(RED + "Invalid option!" + RESET)
-
-        wait()
+            wait()
 
 
 if __name__ == "__main__":
