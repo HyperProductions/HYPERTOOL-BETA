@@ -33,6 +33,15 @@ def wait():
     input(GRAY + "\nPress Enter..." + RESET)
 
 
+# 🔥 SAFE RUN (CRASH PROTECTION)
+def safe_run(module):
+    try:
+        module.run()
+    except Exception as e:
+        print(RED + "\nMODULE ERROR:" + RESET, e)
+        wait()
+
+
 def iplogger():
     print(MOR + "Opening IP Logger..." + RESET)
     webbrowser.open("https://iplogger.org")
@@ -58,7 +67,7 @@ def menu():
 
             choice = input("\n>> Select: ").strip().lower()
 
-        # DEBUG MODE (RETRO PURPLE SCREEN)
+        # DEBUG MODE
         else:
             debug.retro_banner()
             debug.retro_menu()
@@ -84,22 +93,22 @@ def menu():
         clear()
 
         if choice == "1":
-            systeminfo.run()
+            safe_run(systeminfo)
 
         elif choice == "2":
-            ipscanner.run()
+            safe_run(ipscanner)
 
         elif choice == "3":
-            portscanner.run()
+            safe_run(portscanner)
 
         elif choice == "4":
-            network.run()
+            safe_run(network)
 
         elif choice == "5":
-            processviewer.run()
+            safe_run(processviewer)
 
         elif choice == "6":
-            cleaner.run()
+            safe_run(cleaner)
 
         elif choice == "7":
             iplogger()
