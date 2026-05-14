@@ -16,8 +16,7 @@ HYPERTOOL/
     ├── systeminfo.py
     ├── ipscanner.py
     ├── portscanner.py
-    ├── minecraft.py
-    ├── discordtools.py
+    ├── iplogger.py
     ├── network.py
     ├── filemanager.py
     ├── processviewer.py
@@ -34,21 +33,21 @@ HYPERTOOL/
 - Process Viewer (task list)
 - System Cleaner (temp temizleme)
 - File Manager (dosya gezici)
-- Minecraft Tools (server check)
-- Discord Tools (webhook / invite info)
+- Ip Logger (IP Bulucu)
 
 ----------------------------------------
 🚀 ÇALIŞTIRMA
 ----------------------------------------
 
 1. Python kurulu olmalı (3.10+ önerilir)
+
 2. Gerekli kütüphaneleri yükle:
 
    pip install psutil requests
 
 3. Programı başlat:
 
-   python main.py
+   python3 main.py
 
 ----------------------------------------
 📦 EXE YAPMA
@@ -62,5 +61,5 @@ Bu araç sadece eğitim ve kişisel kullanım içindir.
 Yetkisiz sistemlerde kullanılması önerilmez.
 
 ----------------------------------------
-💜 HYPER TOOL v1
+💜 HYPER TOOL v2
 ========================================
