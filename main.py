@@ -70,7 +70,7 @@ def menu():
         choice = input("\n>> Select: ").strip()
 
         # SECRET DEBUG MODE
-        if choice == DEBUG_KEY:
+        if choice == DEBUG_KEY:h*23465245-v2
             debug_mode = not debug_mode
             print(GREEN + "\nDEBUG MODE TOGGLED!" + RESET)
             wait()
