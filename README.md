@@ -36,9 +36,8 @@ HYPERTOOL/
 - Ip Logger (IP Bulucu)
 
 ----------------------------------------
-🚀 ÇALIŞTIRMA
+🚀 ÇALIŞTIRMA {PC UBUNTU]
 ----------------------------------------
-
 1. Python kurulu olmalı (3.10+ önerilir)
 
 2. Gerekli kütüphaneleri yükle:
@@ -48,12 +47,24 @@ HYPERTOOL/
 3. Programı başlat:
 
    python3 main.py
-
 ----------------------------------------
 📦 EXE YAPMA
 
 pyinstaller --onefile --console main.py
+----------------------------------------
+👨‍💻 TERMUXTA ÇALIŞTIRMA
 
+1. TERMUX PAKETİNİ İNDİR
+   pkg install python-psutil
+   pip install psutil
+   
+2. KLONLA
+  ~ $ git clone https://github.com/HyperProductions/HYPERTOOL-BETA.git
+
+3. ÇALIŞTIR
+   ~ $ cd HYPERTOOL-BETA
+   ~ $ python3 main.py
+   
 ----------------------------------------
 ⚠️ UYARI
 
