@@ -61,6 +61,24 @@ git clone https://github.com/HyperProductions/HYPERTOOL-BETA.git
 cd HYPERTOOL-BETA
 python3 main.py
 -------------------------------------------------------------------
+🌐 TRACEROUTE GEREKSİNİMİ
+
+Traceroute özelliğinin çalışması için sistemde traceroute aracı kurulu olmalıdır.
+
+📱 TERMUX:
+pkg install traceroute -y
+🐧 UBUNTU / LINUX:
+sudo apt update
+sudo apt install traceroute -y
+⚠️ NOT: Eğer traceroute kurulu değilse sistem otomatik olarak ping fallback kullanır.
+
+💡 Neden önemli?
+
+Çünkü:
+
+Python kodu doğru olsa bile
+dış sistem tool’u yoksa → hata verir
+------------------------------------------------------------------
 ⚠️ UYARI
 
 Bu araç yalnızca eğitim ve kişisel kullanım içindir.
