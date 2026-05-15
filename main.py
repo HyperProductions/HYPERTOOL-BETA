@@ -3,7 +3,7 @@ import sys
 import platform
 import webbrowser
 
-from modules import debug
+from modules import ipscanner, portscanner, network, cleaner, debug
 
 # COLORS
 MOR = "\033[95m"
@@ -54,10 +54,20 @@ def process_viewer():
     wait()
 
 
+# OPTION 7
 def iplogger():
     print(MOR + "Opening IP Logger..." + RESET)
     webbrowser.open("https://iplogger.org")
     wait()
+
+
+# SAFE MODULE RUN
+def safe_run(module):
+    try:
+        module.run()
+    except Exception as e:
+        print(RED + "\nMODULE ERROR:" + RESET, e)
+        wait()
 
 
 def menu():
@@ -69,8 +79,13 @@ def menu():
             banner()
 
             print(MOR + "[1]" + RESET + " System Information")
+            print(MOR + "[2]" + RESET + " IP Scanner")
+            print(MOR + "[3]" + RESET + " Port Scanner")
+            print(MOR + "[4]" + RESET + " Network Tools")
             print(MOR + "[5]" + RESET + " Process Viewer")
+            print(MOR + "[6]" + RESET + " Cleaner")
             print(MOR + "[7]" + RESET + " IP Logger")
+
             print(RED + "[0]" + RESET + " Exit")
 
             choice = input("\n>> Select: ").strip().lower()
@@ -103,19 +118,30 @@ def menu():
 
         clear()
 
-        # ✅ 1 NOW WORKS
+        # ✅ 1 FIXED
         if choice == "1":
             system_info()
 
-        # ✅ 5 NOW WORKS
+        # NORMAL MODULES
+        elif choice == "2":
+            safe_run(ipscanner)
+
+        elif choice == "3":
+            safe_run(portscanner)
+
+        elif choice == "4":
+            safe_run(network)
+
+        # ✅ 5 FIXED
         elif choice == "5":
             process_viewer()
 
-        # ✅ 7
+        elif choice == "6":
+            safe_run(cleaner)
+
         elif choice == "7":
             iplogger()
 
-        # EXIT
         elif choice == "0":
             sys.exit()
 
