@@ -1,9 +1,17 @@
 import os
 import sys
-import platform
 import webbrowser
 
-from modules import ipscanner, portscanner, network, cleaner, debug
+from modules import (
+    systeminfo,
+    ipscanner,
+    portscanner,
+    network,
+    processviewer,
+    cleaner,
+    debug,
+    traceroute
+)
 
 # COLORS
 MOR = "\033[95m"
@@ -33,40 +41,17 @@ def wait():
     input(GRAY + "\nPress Enter..." + RESET)
 
 
-# ✅ OPTION 1 FIX
-def system_info():
-    print(MOR + "\n=== SYSTEM INFO ===\n" + RESET)
-
-    print("OS:", platform.system())
-    print("Version:", platform.version())
-    print("Machine:", platform.machine())
-    print("Processor:", platform.processor())
-
-    wait()
-
-
-# ✅ OPTION 5 FIX
-def process_viewer():
-    print(MOR + "\n=== PROCESS VIEWER ===\n" + RESET)
-
-    os.system("ps")
-
-    wait()
-
-
-# OPTION 7
 def iplogger():
     print(MOR + "Opening IP Logger..." + RESET)
     webbrowser.open("https://iplogger.org")
     wait()
 
 
-# SAFE MODULE RUN
 def safe_run(module):
     try:
         module.run()
     except Exception as e:
-        print(RED + "\nMODULE ERROR:" + RESET, e)
+        print(RED + "\nERROR:" + RESET, e)
         wait()
 
 
@@ -85,6 +70,7 @@ def menu():
             print(MOR + "[5]" + RESET + " Process Viewer")
             print(MOR + "[6]" + RESET + " Cleaner")
             print(MOR + "[7]" + RESET + " IP Logger")
+            print(MOR + "[8]" + RESET + " Traceroute")
 
             print(RED + "[0]" + RESET + " Exit")
 
@@ -110,19 +96,16 @@ def menu():
         # SECRET DEBUG KEY
         if choice == debug.DEBUG_KEY:
             debug.toggle()
-
             print(GREEN + "\nDEBUG MODE TOGGLED" + RESET)
-
             wait()
             continue
 
         clear()
 
-        # ✅ 1 FIXED
+        # OPTIONS
         if choice == "1":
-            system_info()
+            safe_run(systeminfo)
 
-        # NORMAL MODULES
         elif choice == "2":
             safe_run(ipscanner)
 
@@ -132,15 +115,17 @@ def menu():
         elif choice == "4":
             safe_run(network)
 
-        # ✅ 5 FIXED
         elif choice == "5":
-            process_viewer()
+            safe_run(processviewer)
 
         elif choice == "6":
             safe_run(cleaner)
 
         elif choice == "7":
             iplogger()
+
+        elif choice == "8":
+            safe_run(traceroute)
 
         elif choice == "0":
             sys.exit()
