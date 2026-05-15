@@ -1,4 +1,5 @@
 import platform
+import os
 
 def run():
     print("\n=== SYSTEM INFO ===\n")
