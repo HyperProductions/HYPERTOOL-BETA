@@ -1,76 +1,70 @@
-========================================
-              HYPER TOOL
+💜 HYPER TOOL
+
 ========================================
 
-HYPER TOOL, çok amaçlı bir sistem araç setidir.
-Python ile geliştirilmiştir.
-
-----------------------------------------
+HYPER TOOL, Python ile geliştirilmiş çok amaçlı bir sistem araç setidir.
+Sistem bilgisi, ağ araçları ve dosya yönetimi gibi birçok temel aracı tek bir panelde toplar.
+-------------------------------------------------------------------
 📁 PROJE YAPISI
-----------------------------------------
 
 HYPERTOOL/
 │
 ├── main.py
 └── modules/
-    ├── systeminfo.py
-    ├── ipscanner.py
-    ├── portscanner.py
-    ├── iplogger.py
-    ├── network.py
-    ├── filemanager.py
-    ├── processviewer.py
-    └── cleaner.py
-
-----------------------------------------
+├── systeminfo.py
+├── ipscanner.py
+├── portscanner.py
+├── iplogger.py
+├── network.py
+├── filemanager.py
+├── processviewer.py
+└── cleaner.py
+------------------------------------------------------------------
 ⚙️ ÖZELLİKLER
-----------------------------------------
+System Information Viewer
+IP Scanner (GeoIP bilgi alma)
+Port Scanner (TCP port tarama)
+Network Tools (ping, DNS, internet kontrolü)
+Process Viewer (çalışan işlemleri listeleme)
+System Cleaner (geçici dosya temizleme)
+File Manager (dosya gezici)
+IP Logger (IP tespit aracı)
+🚀 KURULUM (PC / UBUNTU)
+Python kurulu olmalı (3.10+ önerilir)
 
-- System Information Viewer
-- IP Scanner (GeoIP info)
-- Port Scanner (TCP scan)
-- Network Tools (ping, DNS, internet check)
-- Process Viewer (task list)
-- System Cleaner (temp temizleme)
-- File Manager (dosya gezici)
-- Ip Logger (IP Bulucu)
+Gerekli kütüphaneler:
 
-----------------------------------------
-🚀 ÇALIŞTIRMA {PC UBUNTU]
-----------------------------------------
-1. Python kurulu olmalı (3.10+ önerilir)
+pip install psutil requests
 
-2. Gerekli kütüphaneleri yükle:
+Programı çalıştır:
 
-   pip install psutil requests
-
-3. Programı başlat:
-
-   python3 main.py
-----------------------------------------
-📦 EXE YAPMA
+python3 main.py
+------------------------------------------------------------------
+📦 EXE YAPMA (WINDOWS)
 
 pyinstaller --onefile --console main.py
-----------------------------------------
-👨‍💻 TERMUXTA ÇALIŞTIRMA
+------------------------------------------------------------------
+📱 TERMUX KURULUM
 
-1. TERMUX PAKETİNİ İNDİR
-   pkg install python-psutil
-   pip install psutil
-   
-2. KLONLA
-  ~ $ git clone https://github.com/HyperProductions/HYPERTOOL-BETA.git
+Gerekli paketler:
 
-3. ÇALIŞTIR
-   ~ $ cd HYPERTOOL-BETA
-   ~ $ python3 main.py
-   
-----------------------------------------
+pkg install python -y
+pkg install clang -y
+pip install psutil requests
+
+Repo klonla:
+
+git clone https://github.com/HyperProductions/HYPERTOOL-BETA.git
+
+Çalıştır:
+
+cd HYPERTOOL-BETA
+python3 main.py
+-------------------------------------------------------------------
 ⚠️ UYARI
 
-Bu araç sadece eğitim ve kişisel kullanım içindir.
-Yetkisiz sistemlerde kullanılması önerilmez.
-
-----------------------------------------
+Bu araç yalnızca eğitim ve kişisel kullanım içindir.
+Yetkisiz sistemlerde kullanım sorumluluğu kullanıcıya aittir.
+-------------------------------------------------------------------
 💜 HYPER TOOL v2
-========================================
+-------------------------------------------------------------------
